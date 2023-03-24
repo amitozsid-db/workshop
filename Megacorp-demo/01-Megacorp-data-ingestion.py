@@ -46,7 +46,7 @@ df.createOrReplaceTempView("incoming_data")
 #                                      |
 bronzeDF = spark.readStream.format("cloudFiles")\
             .option("cloudFiles.format", "json")\
-            .option("cloudFiles.schemaLocation", f"{path}\schema")\
+            .option("cloudFiles.schemaLocation", f"{path}/schema")\
             .option("cloudFiles.maxFilesPerTrigger", 2)\
             .option("mergeSchema", "true").load(dataPath)
 
